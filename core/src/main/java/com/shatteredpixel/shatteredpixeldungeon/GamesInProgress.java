@@ -104,14 +104,9 @@ public class GamesInProgress {
 				
 				Bundle bundle = FileUtils.bundleFromFile(gameFile(slot));
 
-				if (bundle.getInt( "version" ) < ExamplePixelDungeon.v1_4_3) {
-					info = null;
-				} else {
-
-					info = new Info();
-					info.slot = slot;
-					Dungeon.preview(info, bundle);
-				}
+				info = new Info();
+				info.slot = slot;
+				Dungeon.preview(info, bundle);
 
 			} catch (IOException e) {
 				info = null;
