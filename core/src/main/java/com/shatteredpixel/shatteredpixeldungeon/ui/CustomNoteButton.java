@@ -21,7 +21,7 @@
 
 package com.shatteredpixel.shatteredpixeldungeon.ui;
 
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
+import com.shatteredpixel.shatteredpixeldungeon.ExamplePixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.Statistics;
 import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
 import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
@@ -355,9 +355,9 @@ public class CustomNoteButton extends IconButton {
 
 	private static void refreshScene(Notes.CustomRecord recToShow){
 		if (recToShow == null){
-			ShatteredPixelDungeon.seamlessResetScene();
+			ExamplePixelDungeon.seamlessResetScene();
 		} else {
-			ShatteredPixelDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
+			ExamplePixelDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
 				@Override
 				public void beforeCreate() {
 
@@ -368,7 +368,7 @@ public class CustomNoteButton extends IconButton {
 					Game.runOnRenderThread(new Callback() {
 						@Override
 						public void call() {
-							ShatteredPixelDungeon.scene().addToFront(new CustomNoteWindow(recToShow));
+							ExamplePixelDungeon.scene().addToFront(new CustomNoteWindow(recToShow));
 						}
 					});
 				}
